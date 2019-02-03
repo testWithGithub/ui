@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-app-rewired": "^1.6.2"
+    
   },
   "dependencies": {
     "apollo-boost": "^0.1.22",
@@ -12,7 +12,8 @@
     "react": "^16.7.0-alpha.2", 
     "react-apollo": "^2.3.2",
     "react-dom": "^16.7.0-alpha.0",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-app-rewired": "^1.6.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
