@@ -23,13 +23,13 @@ class SideBarContainer extends Component {
     //       return true;
     //   }
       handleClickOutside(event) {
-        if (this.sidebar&&this.props.visible ) {
-            if( !this.sidebar.contains(event.target)){
-          //      alert('You clicked outside of me!');
-               this.setState({isOpen:true})
-                this.props.sideBarClose();
-            }
-        }
+        // if (this.sidebar&&this.props.visible ) {
+        //     if( !this.sidebar.contains(event.target)){
+        //   //      alert('You clicked outside of me!');
+        //        this.setState({isOpen:true})
+        //         this.props.sideBarClose();
+        //     }
+        // }
       }
       setChildRef(node) { // receives reference to component as argument
         this.sidebar = node;

@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 const client = new ApolloClient({
-  uri: "https://testshub.herokuapp.com/"
+  uri: "http://localhost:4000/graphql"
 });
 ReactDOM.render(
  <ApolloProvider client={client}>

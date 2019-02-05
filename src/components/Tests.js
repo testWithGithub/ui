@@ -93,16 +93,7 @@ class Tests extends Component {
     const { props } = this;
     return (
       <Query
-        query={gql`{
-    issues {
-        subjectId
-        id
-        title
-        description
-        expectedResults
-      }
-    }`
-        }
+        query={QUERY_ISSUES} variables={{atoken:localStorage.getItem('access_token')}}
       >
         {({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
@@ -112,7 +103,7 @@ class Tests extends Component {
               //  cell: EditableCell,
             },
           };
-          const columnss = props.columns.map((col) => {
+          const columnss = this.columns.map((col) => {
             if (!col.editable) {
               return col;
             }
