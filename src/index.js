@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import Tests from './Tests';
-import Layout from './Layout';
+import Layout from './components/Layout';
+import Main from './components/Main';
 //import 'antd/dist/antd.css'; 
 import * as serviceWorker from './serviceWorker';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 const client = new ApolloClient({
-  uri: "http://localhost:4000/"
+  uri: "http://localhost:4000/graphql"
 });
 ReactDOM.render(
  <ApolloProvider client={client}>
 {/* <App /> */}
-<Layout/>
+<Main/>
 </ApolloProvider>
     , document.getElementById('root'));
 

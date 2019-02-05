@@ -4,9 +4,21 @@ import gql from "graphql-tag";
 import { Table, Divider, Tag,Form,Input,Radio,Button,Row, Col } from 'antd';
 import TestsTitle from "./TestsTitle";
 import TestsResult from "./TestResult";
+
+import { from } from 'zen-observable';
 const FormItem = Form.Item;
 const ButtonGroup = Button.Group;
 
+const QUERY_ISSUES = gql`
+  query Issues($atoken: String!) {
+  issues(token:$atoken) {
+      subjectId
+      id
+      title
+      description
+      expectedResults
+    }
+  }`
 
 const Tests = () => {
     const [version, setVersion] = useState("");
@@ -69,16 +81,7 @@ const Tests = () => {
     
     return(
   <Query
-    query={gql`{
-    issues {
-        subjectId
-        id
-        title
-        description
-        expectedResults
-      }
-    }`
-    }
+    query={QUERY_ISSUES} variables={{atoken:localStorage.getItem('access_token')||""}}
   >
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
@@ -113,5 +116,5 @@ const Tests = () => {
       );
     }}
   </Query>
-);}
+)}
 export default Tests;

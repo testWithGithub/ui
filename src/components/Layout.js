@@ -1,12 +1,13 @@
 import React from 'react';
-
+import {SideBarStatus} from "../Queries/query"
 import { compose, withState } from 'recompose';
+
 //import logo from '../logo.svg';
 import { BackTop, Row, Col, Layout, Menu, Button } from 'antd';
 import Tests from './Tests'
-
+import UserInfoQuery from './UserInfoQuery';
+import SIdeBarContatiner from './SIdeBarContatiner';
 const { Header, Sider, Content } = Layout;
-
 let collapsedState = false;
 const toggle = () => {
   collapsedState = !collapsedState;
@@ -51,6 +52,7 @@ const LayoutInner = class extends React.Component {
     return (
       <Layout
         style={{ minHeight: '-webkit-fill-available' }}>
+        <SIdeBarContatiner visible/>
         <Header
           style={{
             background: 'white',
@@ -79,8 +81,9 @@ const LayoutInner = class extends React.Component {
             <Col span={12} style={{ height: '-webkit-fill-available' }}>
               {/* <TableAutoComplete /> */}
             </Col>
-            <Col span={2} style={{ textAlign: 'center' }}>
+            <Col span={2} style={{ textAlign: 'right' }}>
               {/* <AddPipe style={{ margin: 'auto' }} /> */}
+              <UserInfoQuery/>
             </Col>
           </Row>
         </Header>
